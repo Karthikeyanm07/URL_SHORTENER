@@ -1,6 +1,6 @@
-# 🔗 TrimLink: High-Performance Full-Stack URL Shortener
+# 🔗 Sniply: High-Performance Full-Stack URL Shortener
 
-TrimLink is a modern, blazing-fast, and secure URL shortening platform built to transform long, messy web links into clean, trackable, and easily shareable short URLs. Designed with privacy, speed, and clean user experience in mind, the platform features a professional dashboard for managing links, tracking analytics, and securing user accounts.
+Sniply is a modern, blazing-fast, and secure URL shortening platform built to transform long, messy web links into clean, trackable, and easily shareable short URLs. Designed with privacy, speed, and clean user experience in mind, the platform features a professional dashboard for managing links, tracking analytics, and securing user accounts.
 
 ---
 
