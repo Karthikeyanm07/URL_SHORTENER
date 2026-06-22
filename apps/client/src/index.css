@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+@theme inline {
+	--color-background: hsl(0 0% 98%);
+	--color-foreground: hsl(0 0% 6%);
+	--color-card: hsl(0 0% 100%);
+	--color-card-foreground: hsl(0 0% 6%);
+	--color-popover: hsl(0 0% 100%);
+	--color-popover-foreground: hsl(0 0% 6%);
+	--color-primary: hsl(221 83% 53%);
+	--color-primary-foreground: hsl(0 0% 100%);
+	--color-secondary: hsl(0 0% 93%);
+	--color-secondary-foreground: hsl(0 0% 15%);
+	--color-muted: hsl(0 0% 95%);
+	--color-muted-foreground: hsl(0 0% 42%);
+	--color-accent: hsl(221 83% 53%);
+	--color-accent-foreground: hsl(0 0% 100%);
+	--color-destructive: hsl(0 72% 48%);
+	--color-destructive-foreground: hsl(0 0% 100%);
+	--color-border: hsl(0 0% 88%);
+	--color-input: hsl(0 0% 88%);
+	--color-ring: hsl(221 83% 53%);
+	--radius: 0.5rem;
+}
+
+/* shadcn still reads HSL variables for its own internal references */
+:root {
+	--background: 0 0% 98%;
+	--foreground: 0 0% 6%;
+	--card: 0 0% 100%;
+	--card-foreground: 0 0% 6%;
+	--popover: 0 0% 100%;
+	--popover-foreground: 0 0% 6%;
+	--primary: 221 83% 53%;
+	--primary-foreground: 0 0% 100%;
+	--secondary: 0 0% 93%;
+	--secondary-foreground: 0 0% 15%;
+	--muted: 0 0% 95%;
+	--muted-foreground: 0 0% 42%;
+	--accent: 221 83% 53%;
+	--accent-foreground: 0 0% 100%;
+	--destructive: 0 72% 48%;
+	--destructive-foreground: 0 0% 100%;
+	--border: 0 0% 88%;
+	--input: 0 0% 88%;
+	--ring: 221 83% 53%;
+	--radius: 0.5rem;
+}
+
+@layer base {
+	* {
+		box-sizing: border-box;
+		border-color: hsl(var(--border));
+	}
+
+	body {
+		background-color: hsl(var(--background));
+		color: hsl(var(--foreground));
+		font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	*:focus-visible {
+		outline: 2px solid hsl(var(--ring));
+		outline-offset: 2px;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		*, *::before, *::after {
+			animation-duration: 0.01ms !important;
+			transition-duration: 0.01ms !important;
+		}
+	}
+}
