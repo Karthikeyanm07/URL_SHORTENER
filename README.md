@@ -1,39 +1,76 @@
-# 🔗 TrimLink: High-Performance Full-Stack URL Shortener
+# 🌐 Sniply — Client Dashboard App
 
-TrimLink is a modern, blazing-fast, and secure URL shortening platform built to transform long, messy web links into clean, trackable, and easily shareable short URLs. Designed with privacy, speed, and clean user experience in mind, the platform features a professional dashboard for managing links, tracking analytics, and securing user accounts.
-
----
-
-## 🏗️ Monorepo Structure
-
-This project is organized as a unified monorepo workspace dividing the ecosystem into independent layer architectures:
-
-* **`apps/client`**: The interactive frontend built using **React**, **TypeScript**, **Vite (v8)**, **Tailwind CSS v4**, and **shadcn/ui**. Component state logic is tested using **Vitest**.
-* **`apps/server`**: The secure backend API powered by **Node.js** and **TypeScript**, using **Prisma ORM** for standard relations and **Redis** for rate limiting and redirection tracking. Business services are tested using **Jest**.
+This is the frontend client application for Sniply, built with **React**, **TypeScript**, and **Vite**. It provides an
+intuitive, high-performance web panel where users can shorten links, access analytics, and manage their personal
+collections.
 
 ---
 
-## 🛠️ Global Installation & Local Bootup
+## ✨ Features Built-In
 
-### 1. Clone the Workspace
-```bash
-git clone https://github.com/Karthikeyanm07/URL_SHORTENER.git
-cd URL_SHORTENER
+* **Advanced Layout Design**: Configured with the modern **shadcn/ui (v4)** components using the cohesive **Radix
+  Engine + Vega Design Preset**.
+* **Zero-Config Utilities**: Styled with **Tailwind CSS v4**, taking advantage of the high-speed Rust compiler and fully
+  automated component class detection.
+* **Mock Environment Resilience**: Configured setup hooks protecting test suites from standard browser runtime layout
+  exceptions (such as `ResizeObserver` and `navigator.clipboard`).
+* **Environment Safeguards**: Frontfaced variable parsing strictly requiring variables to be prefixed with `VITE_` to
+  protect developer secrets.
+
+---
+
+## 🛠️ Technology Highlights
+
+* **Framework**: React 18 / 19 with TypeScript
+* **Build Engine**: Vite v8
+* **Styling Layer**: Tailwind CSS v4 via `@tailwindcss/vite`
+* **Component Primitives**: shadcn/ui + Radix UI Core
+* **Test Automation**: Vitest + React Testing Library
+* **DOM Runtime Simulation**: jsdom
+
+---
+
+## 🚀 Getting Started
+
+### 1. Configure Local Environment Variables
+
+Create a `.env` file in the root of this folder (or verify it matches the structural blueprint in `.env.example`):
+
+```env
+VITE_API_URL=http://localhost:5173
 ```
 
-### 2. Configure Local Environments
-Ensure you navigate into both `apps/client` and `apps/server` to match their local configurations using their respective `.env.example` file profiles.
+### 2. Launch Local Development Server
 
-### 3. Run Development Environments
-Run the individual project servers concurrently or independently using your localized scripts inside their corresponding directories:
+From the root repository directory (using workspace routing) or inside this folder, boot up your client server:
 
-* **Frontend Client (Port 5173)**: `npm run dev` (inside `apps/client`)
-* **Backend API Server (Port 5000)**: `npm run dev` or equivalent boot scripts (inside `apps/server`)
+```bash
+npm run dev
+```
+
+The app will run locally at [http://localhost:5173/](http://localhost:5173/). All client requests sent to `/api` are
+automatically proxied through Vite directly to your backend server running on port `5000`.
+
+### 3. Run Frontend Test Suites
+
+Execute component checks, UI assertions, and state machine validation tests using Vitest:
+
+```bash
+npm run test
+```
 
 ---
 
-## 🛡️ Testing & Validation Rules
+## 📂 Structural Codebase Overview
 
-Verify operational status across individual code layers by accessing their custom workspaces:
-* **Client App Tests**: Execute `npm run test` inside `apps/client` for Vitest component evaluations.
-* **Server Api Tests**: Execute `npm run test` inside `apps/server` for Jest endpoint evaluation blocks.
+```text
+src/
+├── assets/         # Global static images, logos, and vector art assets
+├── components/     # Atomic shadcn/ui layouts (Buttons, Inputs, Dialogs)
+├── context/        # Authentication, Session states, and Global Contexts
+├── lib/            # Shared utility definitions (Axios clients, class mergers)
+├── pages/          # Full page structural modules (Login, Dashboard, Landing)
+├── services/       # Core API fetch requests matching backend routes
+├── tests/          # Vitest configurations and mock lifecycle scripts
+└── types/          # Strict TypeScript interface and type mappings
+```
